@@ -12,7 +12,8 @@ func _on_Enemy_area_entered(area):
 	if not bullet:
 		return
 	
-	$AudioStreamPlayer.play()
+	$HitSound.play()
+	$AnimationPlayer.play("hit")
 	bullet.queue_free()
 	damage(self)
 
