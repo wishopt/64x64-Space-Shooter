@@ -13,9 +13,12 @@ Enemy = ExtResource( 2 )
 position = Vector2( 64, 8 )
 
 [node name="Spawn2" type="Position2D" parent="SpawnPoints"]
-position = Vector2( 64, 32 )
+position = Vector2( 64, 24 )
 
 [node name="Spawn3" type="Position2D" parent="SpawnPoints"]
+position = Vector2( 64, 40 )
+
+[node name="Spawn4" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 64, 56 )
 
 [node name="Timer" type="Timer" parent="."]
