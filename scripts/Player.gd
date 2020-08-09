@@ -37,9 +37,7 @@ func get_move_direction() -> Vector2:
 	return Vector2(x, y).normalized()
 
 
-func fire_bullet() -> void:
-	$AudioStreamPlayer.play()
-	
+func fire_bullet() -> void:	
 	var bullet = Bullet.instance()
 	var offset = Vector2(6, 0)
 	bullet.position = position + offset
