@@ -10,10 +10,11 @@ export(int) var health = 3
 const ExplosionEffect = preload("res://scenes/ExplosionEffect.tscn")
 
 signal died(node)
-
+signal damaged(node)
 
 func _ready() -> void:
 	connect("died", get_parent(), "entity_died")
+	connect("damaged", get_parent(), "entity_damaged")
 
 
 func die(node: Area2D) -> void:
@@ -28,7 +29,8 @@ func die(node: Area2D) -> void:
 	# Remove Entity
 	queue_free()
 
-func damage(node: Area2D) -> void:
+func damage(node: Area2D) -> void:	
 	health -= 1
+	emit_signal("damaged", node)
 	if health <= 0:
 		die(node)

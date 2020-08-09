@@ -32,9 +32,8 @@ func move(delta: float) -> void:
 	
 	
 func get_move_direction() -> Vector2:
-	var x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 	var y = int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up"))	
-	return Vector2(x, y).normalized()
+	return Vector2(0, y).normalized()
 
 
 func fire_bullet() -> void:	
@@ -50,4 +49,5 @@ func _on_Player_area_entered(area):
 		return
 	
 	enemy.die(enemy)
+	$AnimationPlayer.play("hit")
 	damage(self)

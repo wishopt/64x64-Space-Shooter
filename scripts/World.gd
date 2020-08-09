@@ -26,6 +26,12 @@ func entity_died(entity):
 		game_over()
 
 
+func entity_damaged(entity):
+	if entity is Player:
+		print("oof")
+		$HP.text = "HP: " + str(entity.health)
+
+
 func game_over() -> void:
 	is_game_over = true
 	$GameOverScreen/Label.text = "Game Over\nYour Score: " + str(score) + "\nR to restart"

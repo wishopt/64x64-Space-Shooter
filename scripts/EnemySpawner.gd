@@ -22,6 +22,7 @@ func spawn_enemy() -> void:
 	var spawn: Position2D = get_spawn_point()
 	var enemy = Enemy.instance()
 	enemy.position = spawn.position
+	enemy.speed = randi() % 20 + 20
 	get_parent().add_child(enemy)
 
 
